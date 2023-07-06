@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "WandohopeR";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #ebebeb;
+  text-align: center;
+}
+h1 {
+  color: seagreen;
+  font-weight: bolder;
+  font-family: "WandohopeR";
+}
+.title {
+  color: sandybrown;
+  font-size: 40px;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  text-shadow: 3px 3px 0.5px rgba(196, 163, 163, 0.3);
+  letter-spacing: 10px;
+}
+
+.titlecite {
+  color: sandybrown;
+  font-size: 20px;
+  font-family: "Roboto Slab", serif;
+}
+
+.ko {
+  color: black;
+  font-size: 25px;
+  font-family: "WandohopeR";
+  font-weight: bold;
+  font-style: italic;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

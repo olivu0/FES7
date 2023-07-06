@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조적 가상 선택자</title>
+    <style>
+      /* :first-child {
+        border: 4px solid royalblue;
+        padding: 10px;
+      } */
+
+      ol :first-child {
+        color: salmon;
+      }
+
+      /* 위 코드와 아래 코드 같은 것 */
+
+      /* li:first-child {
+        color: red;
+      } */
+
+      /* .ol-style > li:last-child {
+        color: green;
+      } */
+
+      /* .inner-ol-style > li:last-child {
+        color: darkorange;
+      } */
+      li:nth-child(4) {
+        color: royalblue;
+      }
+
+      li:nth-child(2n) {
+        color: royalblue;
+      }
+
+      li:nth-child(odd) {
+        color: darkgoldenrod;
+      }
+
+      div :nth-of-type(1) {
+        color: red;
+      }
+
+      div :only-of-type {
+        background-color: skyblue;
+      }
+
+      li {
+        background-color: #eee;
+      }
+
+      li:not(:first-child) {
+        margin-top: 20px;
+      }
+
+      p:not(.t2) {
+        background-color: tan;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p class="t1">안녕</p>
+      <p class="t1">안녕</p>
+      <p class="t1">안녕</p>
+      <p class="t1">안녕</p>
+      <p class="t2">안녕</p>
+      <p class="t2">안녕</p>
+      <p class="t1">안녕</p>
+      <p class="t2">안녕</p>
+    </div>
+    <div>
+      <p>안녕하세요</p>
+      <p>안녕하세요</p>
+      <p>안녕하세요</p>
+      <strong>안녕하세요</strong>
+      <p>안녕하세요</p>
+      <a href="#">a 태그</a>
+      <p>안녕하세요</p>
+      <em>em 태그</em>
+      <a href="#">a 태그</a>
+      <a href="#">a 태그</a>
+      <a href="#">a 태그</a>
+    </div>
+    <hr />
+
+    <ol class="ol-style">
+      <li>
+        리스트
+        <ol class="inner-ol-style">
+          <li>ol li</li>
+          <li>ol li</li>
+        </ol>
+      </li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+      <li>리스트</li>
+    </ol>
+  </body>
+</html>

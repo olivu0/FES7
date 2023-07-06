@@ -1,0 +1,50 @@
+/* 상대 경로 font-face 연결 */
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("./font/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* font-family가 많은이유: 맨 처음거 안되면 뒤의 것, 그 뒤의 것 */
+body {
+  font-family: Pretendard-Regular, "Times New Roman", Dotum, "돋움", sans-serif;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+.parents {
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  font-size: 20px;
+}
+
+.child {
+  font-size: 2em;
+  width: 50vw;
+  height: 50vh;
+  /* 50vw: 화면의 가로 반, 알아서 줄어들고 늘어남
+  100이 최대
+  50vh: 화면의 세로 반
+  단위를 사용해 반응형 작업을 할 수 있음  */
+  /* width: 50px // 200px * 0.5 = 100px */
+  background-color: salmon;
+}
+
+html {
+  font-size: 10px;
+}
+
+p {
+  font-size: 4rem;
+  /* (기본)16px * 4 = 64px; */
+  /* 10px로 바꿨으니까 40px이 됨 */
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상요소</title>
+    <!-- 장식용으로 많이 사용 -->
+    <style>
+      p::before {
+        content: "7기 여러분 ";
+      }
+      p::after {
+        content: "🤪";
+      }
+
+      /* 닫는 태그 없는 태그는 after, before 사용 불가 */
+      /* input::before {
+        content: "7기 여러분";
+      } */
+    </style>
+  </head>
+
+  <body>
+    <p><strong>안녕하세요</strong></p>
+
+    <img src="" alt="" />
+    <input type="text" />
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      p {
+        /* weight: 100, 400 ,700을 다운받았기 때문에 다른 것을 입력하면 그것에 가까운 100, 400, 700 으로 바꿔줌
+        지정하지 않으면 regular*/
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        text-align: justify;
+        line-height: 1.8;
+        /* letter-spacing: 2px; */
+        /* word-spacing: 20px; */
+        text-indent: 32px;
+        /* word-break: 영어 keep-all 기준, 한글 break-all 기준 */
+
+        background-color: aquamarine;
+        /* 1줄 말줄임 처리 */
+        /* white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; */
+        /* overflow: 박스에 넘쳤을 때 */
+        /* text-overflow: 박스에 텍스트가 넘쳤을 때 */
+
+        /* 여러줄 말줄임 */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+
+        font-style: italic;
+      }
+
+      p::first-letter {
+        text-transform: uppercase;
+        font-size: 30px;
+      }
+
+      .fes7 {
+        /* text-transform: uppercase; */
+        /* text-transform: lowercase; */
+        text-transform: capitalize;
+        /* text-decoration: orange underline solid 3px; */
+        text-decoration: orange underline wavy 2px;
+        /* text-decoration-color: royalblue;
+        text-decoration-line: line-through underline overline;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 5px; */
+      }
+      .tx-shadow {
+        text-shadow: 1px 0px 0px rgb(255, 0, 0), -1px 0px 0px rgb(255, 0, 0);
+        box-shadow: 4px 4px 0px rgb(255, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <title>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+        sed iusto asperiores
+      </title>
+      illum numquam tempore vitae deleniti ab, natus, officia nostrum pariatur
+      laboriosam. Tenetur nobis commodi quod, libero corporis dolores?
+    </p>
+    <p>
+      boo Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero quasi
+      placeat officiis quia ducimus animi error neque. Molestias modi eligendi
+      corporis perferendis eveniet quos officiis dignissimos impedit, distinctio
+      mollitia quae.
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga dolore modi
+      necessitatibus excepturi? Asperiores dolore nam nihil, quisquam pariatur
+      nostrum veritatis doloremque nulla. Recusandae dolore eius inventore,
+      repudiandae odit laudantium! Lorem, ipsum dolor sit amet consectetur
+      adipisicing elit. Illum, quidem eos praesentium velit numquam nam iure
+      excepturi libero dolorem error, facilis blanditiis neque qui minima
+      laudantium perferendis, accusantium harum repellendus!
+    </p>
+    <p class="fes7">Frontend school7 안녕하세요</p>
+    <p class="tx-shadow">Text Shadow</p>
+  </body>
+</html>

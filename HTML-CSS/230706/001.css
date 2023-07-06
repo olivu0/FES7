@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+
+@font-face {
+  font-family: "KBO-Dia-Gothic_bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  color: red;
+}
+h1,
+h2 {
+  font-weight: normal;
+}
+h1 {
+  color: inherit;
+  font-family: "Black Han Sans", sans-serif;
+}
+strong {
+  border-bottom: 5px solid currentColor;
+}
+
+h2 {
+  color: #999;
+  font-family: "Bagel Fat One", cursive;
+}
+
+.dia {
+  font-family: "KBO-Dia-Gothic_bold";
+}
+
+/* font의 color의 
+가장 마지막 요소에서만 대비율만 볼 수 있음 
+대비율을 맞춰줘야 모든 사람들이 다 제대로 볼 수 있음(노인, 저시력자, 색맹 등) 
+카카오톡은 고대비 테마가 있음 */
+
+/* inherit 부모 border가 없어서 안됨 
+border는 바로 부모에게만 상속가능
+
+color값은 계속 아래로 상속*/

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>currentcolor</title>
+    <style>
+      /* 해당 요소에 color 속성값이 지정되어 있는 경우에 사용 */
+      #naver {
+        color: red;
+        border: 10px solid currentColor;
+        padding: 30px;
+      }
+
+      /* 부모 color 상속 */
+
+      #by {
+        color: pink;
+        padding: 30px;
+      }
+
+      #by span {
+        border: 10px solid currentColor;
+      }
+
+      #hi {
+        color: sandybrown;
+      }
+
+      #hi p {
+        border: 1px solid currentColor;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="naver">naver.com</div>
+
+    <div id="by">
+      뿌야
+      <span>안냐세요 뿌에요</span>
+    </div>
+
+    <div id="hi">
+      <p>안녕하세요</p>
+    </div>
+  </body>
+</html>
