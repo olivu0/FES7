@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      p {
+        background: pink;
+      }
+
+      /* content크기만큼 적용 */
+      .max-content {
+        width: max-content;
+      }
+
+      /* 최소 content만큼 단어 하나의 길이*/
+      .min-content {
+        width: min-content;
+      }
+      /* fit되게 알아서 */
+      .fit-content {
+        width: fit-content;
+      }
+
+      .parent {
+        width: 500px;
+        background: gray;
+      }
+
+      .parent p {
+        width: 200px;
+        margin: auto;
+      }
+
+      .parent p {
+        width: 200px;
+        margin: auto 0 auto auto;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias
+      animi error nobis ut sapiente magni ipsa eaque eveniet voluptatibus illo
+      alias ex, at aut enim pariatur, tenetur harum obcaecati?
+    </p>
+    <p class="max-content">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias
+      animi error nobis ut sapiente magni ipsa eaque eveniet voluptatibus illo
+      alias ex, at aut enim pariatur, tenetur harum obcaecati?
+    </p>
+    <p class="min-content">Lo rem ipsum dolor sit</p>
+    <p class="fit-content">Lorem ipsum dolor sit</p>
+
+    <p class="fit-content">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias
+      animi error nobis ut sapiente magni ipsa eaque eveniet voluptatibus illo
+      alias ex, at aut enim pariatur, tenetur harum obcaecati?
+    </p>
+
+    <div class="parent">
+      <p>Lorem ipsum dolor sit</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>border</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+        margin: 20px;
+        text-align: center;
+      }
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+        border: 10px inset gold;
+        border-style: dashed double solid dotted;
+        border-radius: 30px;
+      }
+
+      .box2 {
+        border-radius: 100px;
+      }
+
+      .box3 {
+        border-radius: 10px;
+      }
+
+      /* 이거 다시 */
+      .box4 {
+        border-radius: 100px 0 0 0;
+      }
+
+      .box5 {
+        border-radius: 100px 0 100px 0;
+      }
+
+      .box6 {
+        border-radius: 0 40px 0 40px;
+      }
+
+      .box7 {
+        height: 50px;
+        border-radius: 100px 100px 0px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">box1</div>
+
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+    <div class="box5">box5</div>
+    <div class="box6">box6</div>
+    <div class="box7">box7</div>
+  </body>
+</html>
