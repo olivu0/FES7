@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box-decoration</title>
+    <style>
+      p {
+        margin: 0;
+      }
+      .box1 {
+        width: 100px;
+        height: 32px;
+        border: 5px solid #000;
+        text-align: center;
+        background-color: #343f50;
+        color: #fff;
+        overflow: hidden;
+        /* overflow: hidden 이건 모지? */
+      }
+      .box1 p {
+        border: 5px solid #4a5568;
+        border-width: 5px 0 0 5px;
+        height: 100%;
+        /* padding: 2px 0; */
+      }
+
+      /* tag하나로 box-shadow */
+      .box2 {
+        width: 110px;
+        height: 45px;
+        border: 5px solid #000;
+        text-align: center;
+        background-color: #343f50;
+        color: #fff;
+        box-shadow: inset 5px 5px 0 0 #4a5568;
+        padding-top: 5px;
+        box-sizing: border-box;
+      }
+
+      /* tag 하나로 outline 이용 */
+      .box3 {
+        width: 110px;
+        height: 45px;
+        border: 5px solid #4a5568;
+        text-align: center;
+        background-color: #343f50;
+        color: #fff;
+        padding-top: 5px;
+        box-sizing: border-box;
+        outline: 5px solid #000;
+        border-width: 5px 0 0 5px;
+      }
+
+      .btn1 {
+        padding: 10px 20px 8px 24px;
+        background-color: #343f50;
+        color: #fff;
+        border: 5px solid #000;
+        box-shadow: inset 5px 5px 0 0 #4a5568;
+      }
+
+      .btn1:focus {
+        outline: 5px solid red;
+      }
+
+      .btn2 {
+        padding: 10px 20px 8px 24px;
+        background-color: #343f50;
+        color: #fff;
+        border: 5px solid #000;
+        box-shadow: inset 5px 5px 0 0 #4a5568;
+      }
+
+      .box4 {
+        /* width, height 안주고 display, inline-block을 쓴다 */
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #834df6 0%, #336df3 100%);
+        color: white;
+        border-radius: 50px;
+        border: 5px dashed #e6d6ff;
+        background-clip: padding-box;
+        /* outline: 5px dashed #e6d6ff; */
+      }
+
+      .box5 {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 0 50px 50px 50px;
+        border: 5px solid #ddd;
+        box-shadow: 5px 5px 5px #eee;
+      }
+
+      .box6 {
+        margin-top: 20px;
+        width: 100px;
+        height: 40px;
+        background-color: tomato;
+        /* line-height: 텍스트의 높이 값 */
+        /* line-height: 40px;
+        text-align: center; */
+
+        /* flex 이용한 가운데 정렬 */
+        /* line-height보다는 flex 배우면 flex쓰자 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <p>Hello🧚</p>
+    </div>
+    <br />
+    <p class="box2">Hello🧚</p>
+    <br />
+    <p class="box3">Hello🧚</p>
+    <br />
+    <button type="button" class="btn1">Hello🧚</button>
+    <button type="button" class="btn2">안녕하세요 하하하ㅏㅎ하하하</button>
+    <br />
+    <p class="box4">Hello🧚</p>
+    <p class="box5">Hello🧚</p>
+
+    <div class="box6">Hello🧚</div>
+  </body>
+</html>

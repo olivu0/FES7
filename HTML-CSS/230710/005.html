@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+    <style>
+      body {
+        height: 200vh;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(65, 105, 225, 0.8);
+        color: white;
+      }
+
+      .relative {
+        position: relative;
+        /* top: 200px; */
+        /* left: 200px; */
+        right: 50px;
+      }
+
+      /* (조상의 위치-static을 제외한 position속성)body기준 */
+      .absolute {
+        position: absolute;
+        right: 0;
+      }
+
+      .parent {
+        position: relative;
+      }
+
+      .fixed {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+      }
+
+      .sticky {
+        position: sticky;
+        top: 100px;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="box fixed">box</div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero dolorem quasi hic sint accusantium consequatur, ad, obcaecati reiciendis delectus voluptatum aliquam veniam aspernatur
+      illum modi dicta quas perspiciatis vitae.
+    </div>
+    <div class="box sticky">box</div>
+  </body>
+</html>
