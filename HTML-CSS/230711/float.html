@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float-zero</title>
+    <style>
+      #floatLeft {
+        float: left;
+        background: yellow;
+      }
+      .normal {
+        background: skyblue;
+      }
+      #floatRight {
+        float: right;
+        background: yellowgreen;
+      }
+      .clear {
+        /* float해제하는 방법 */
+        clear: both;
+        background: skyblue;
+      }
+
+      #parent {
+        background: yellow;
+        /* overflow: auto;
+        clear: both; */
+      }
+      .float {
+        float: left;
+      }
+      #parent-overflow {
+        background: skyblue;
+        overflow: auto;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="floatLeft">float-left</div>
+    <div class="normal">normalnormalnormalnormalnormal</div>
+    <!-- normal태그는 block태그이니까 한 줄을 통째로 차지해야하지만 float때문에 위로 올라왔다. 이 특성을 사용해 문단에 이미지를 왼쪽에 넣는다던가 할 수 있음. float문자 대신 이미지 넣으면 됨 -->
+
+    <div id="floatRight">float-right</div>
+    <div class="normal">normalnormalnormalnormalnormal</div>
+
+    <div id="floatLeft">float-left</div>
+    <div class="clear">clearclearclearclearclear</div>
+    <!-- normal태그처럼 올라가는 것을 방지하고 싶다면 clear: left, right 해주면 된다. float를 제거해주는 역할 clear: both 하면 됨
+    display: block; clear: both;-->
+
+    <!-- float의 문제점: 부모 태그가 float 속성의 자식 태그를 인식하지 못한다. 높이가 0이 되버리는 문제 발생 -->
+    <div id="parent">
+      <div class="float">float</div>
+    </div>
+    <!-- #parent의 배경색이 노란색이 되어야하는데 자식인 .float태그를 인식하지 못해 height가 0이 되어 배경색이 나타나지 않음. 
+    float 속성의 자식을 인식하게 하려면 overflow: auto, hidden을 주어야 정상적으로 부모태그가 자식 태그의 높이를 인식한다.  -->
+    <div id="parent-overflow">
+      <div class="float">float</div>
+    </div>
+  </body>
+</html>
