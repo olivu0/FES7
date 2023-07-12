@@ -1,0 +1,210 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* reset */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  font: inherit;
+}
+button:enabled {
+  cursor: pointer;
+}
+/* 넘쳤을때(over) 부모의 100%가 되도록함
+내 크기와 부모의 크기를 비교해서 부모의 크기를 넘지 않도록 */
+img {
+  max-width: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* css */
+
+body {
+  font-family: "Pretendard-Regular", sans-serif;
+}
+
+.card {
+  width: 288px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 16px 12px 16px;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* 유지보수위함 사용자가 다른 이미지 넣었을 때 생각 */
+  object-fit: cover;
+}
+
+/* 공통속성 */
+.fwb {
+  font-family: "Pretendard-Bold";
+  color: #29363d;
+}
+.small-font {
+  font-size: 12px;
+  color: #5a6a72;
+}
+
+/* 말줄임 - 한줄 */
+.ell1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c-h-text {
+  overflow: hidden;
+}
+
+.ell2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  /* text가 길수도 작을수도 있음 
+  1em 폰트 사이즈의 높이 값
+  한줄이면 card가 작아짐. 이것을 방지하기 위해
+  height를 지정해줌 - layout 유지보수위해*/
+  line-height: 1.6;
+  height: calc(1em * 1.6 * 2);
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 288/196;
+  object-fit: cover;
+}
+
+.c-content {
+  padding: 10px 16px 20px 16px;
+}
+
+.c-content .ell2 {
+  margin-bottom: 16px;
+}
+
+.read {
+  font-size: 14px;
+  text-decoration: underline;
+  width: 60px;
+  /* ::after의 조상: 기준이 되게 하려고 position을 줌 */
+  position: relative;
+  /* background-color: beige; */
+  padding: 3px 6px;
+}
+
+/* > 넣기 */
+.read::after {
+  content: "";
+  /* 원래 inline => height, width값 적용 안됨 */
+  display: block;
+
+  width: 4px;
+  height: 4px;
+  /* background-color: skyblue; */
+
+  /* 자기 위치를 잃고 붕뜬다, 조상중에 static이 아닌 것을 찾아서 그것을 기준으로 위치를 잡는다. */
+  position: absolute;
+  /* Read(beige)영역 기준에서 움직인다  */
+  right: 0;
+  top: 50%;
+
+  /* border: 2px solid #29363d; */
+  border-style: solid;
+  border-color: #29363d;
+  border-width: 2px 2px 0 0;
+
+  transform: translate(-10px, -50%) rotate(45deg);
+  transition: all 0.3s;
+}
+
+.read:hover::after {
+  border-color: rosybrown;
+  transform: translate(0, -50%) rotate(405deg);
+}
+
+.card {
+  position: relative;
+  /* background-color: skyblue; */
+}
+
+.btn-group {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+
+  display: flex;
+  gap: 8px;
+}
+
+.btn-group button {
+  border: 0;
+  background: none;
+  padding: 0;
+  /* background-color: beige; */
+}
+
+.btn-group button img {
+  width: 32px;
+  /* background-color: red; */
+  /* vertical-align: top; */
+}
+.card-list {
+  display: flex;
+  gap: 32px 24px;
+  flex-wrap: wrap;
+}
+
+.notice {
+  width: 1224px;
+  /* 좌우여백 각 30px씩 옆에다가 줬다~ 
+  max-width: 100% 줄어들면 부모의 100%, 커지면 자기 꺼
+  좌우 여백: 30px * 2(좌우)
+  */
+  max-width: calc(100% - 30px * 2);
+  margin: 0 auto;
+  /* background-color: seagreen; */
+}
+
+.notice h2 {
+  font-size: 30px;
+  margin-bottom: 32px;
+}

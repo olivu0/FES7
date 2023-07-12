@@ -1,0 +1,165 @@
+/* font */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+/* setting */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  font: inherit;
+}
+button:enabled {
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+}
+
+/* css */
+body {
+  font-family: "pretendard-Regular";
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.card {
+  width: 288px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.1);
+}
+.card header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 16px 16px 16px;
+}
+.card header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.text-profile > h3 {
+  font-size: 16px;
+}
+.fwb {
+  font-family: "pretendard-Bold";
+  font-weight: 700;
+  color: #29363d;
+}
+.small-font {
+  font-family: "pretendard-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  color: #5a6a72;
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 288/196;
+  object-fit: cover;
+}
+
+.text-profile {
+  overflow: hidden;
+}
+
+.ell1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ell2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  line-height: 1.6;
+  height: calc(1em * 1.6 * 2);
+}
+
+.text {
+  padding: 10px 16px 0 16px;
+  margin-bottom: 16px;
+}
+
+.bottom {
+  display: flex;
+  gap: 74px;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 16px 16px 16px;
+}
+
+.bottom .read {
+  text-decoration: underline;
+  /* background-color: beige; */
+  position: relative;
+  width: 70px;
+}
+
+.read::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  /* background-color: skyblue; */
+
+  /* 무조건 부모한테 position: relative 줘라^^ */
+  position: absolute;
+  /* Read(beige)영역 기준에서 움직인다  */
+  right: 0;
+  top: 50%;
+
+  /* border: 2px solid #29363d; */
+  border-style: solid;
+  border-color: #29363d;
+  border-width: 2px 2px 0 0;
+
+  transform: translate(-10px, -50%) rotate(45deg);
+  transition: all 0.3s;
+}
+
+.read:hover::after {
+  border-color: rosybrown;
+  transform: translate(0, -50%) rotate(405deg);
+}
+
+.btn {
+  display: flex;
+  gap: 8px;
+}
+
+.btn button {
+  border: 0;
+  background: none;
+  padding: 0;
+}
