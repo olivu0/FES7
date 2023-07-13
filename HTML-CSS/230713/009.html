@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box:nth-child(even) {
+        background-color: seagreen;
+      }
+      .translate {
+        transform: translate(50px, 50px);
+      }
+      .position {
+        position: relative;
+        top: 50px;
+        left: 50px;
+      }
+      /* width값이 바뀔때마다 리플로우, 리페인트가 반복되어 일어나고 있음 */
+      .bar {
+        background-color: #ddd;
+        width: 400px;
+        /* overflow 없애고도 한번 사용해보셔~ */
+        /* overflow: hidden; */
+        margin: auto;
+      }
+      .bar2 {
+        background-color: rgb(65, 105, 225, 0.5);
+        height: 30px;
+        width: 100%;
+        transition: all 0.3s;
+        transform-origin: 0 0;
+        transform: translateX(-100%);
+      }
+      /* bar에 hover을 준다=회색에 호버를 줬을 때,  */
+      .bar:hover .bar2 {
+        /* width 대신 transform 을 준다 */
+        /* width: 100%; */
+        /* transform: scaleX(100); */
+
+        transform: translateX(0);
+      }
+
+      .bar2:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box translate">translate</div>
+    <div class="box position">position</div>
+    <br />
+    <br />
+    <br />
+
+    <div class="bar">
+      <div class="bar2"></div>
+    </div>
+  </body>
+</html>

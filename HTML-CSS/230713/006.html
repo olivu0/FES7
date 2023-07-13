@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>button실습</title>
+    <style>
+      :root {
+        --btn-color: #2d3848;
+      }
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      button {
+        width: 88px;
+        height: 32px;
+        background-color: var(--btn-color);
+        color: #cbd5df;
+        font-size: 12px;
+        font-weight: 700;
+        margin-right: 24px;
+      }
+      .btn1-1 {
+        color: #439aff;
+      }
+      .btn1-2 {
+        color: #eb5757;
+      }
+
+      .btn2:hover {
+        color: #fff;
+        background-color: #73b4ff;
+        text-decoration: underline;
+      }
+      .btn2-1:hover {
+        color: #439aff;
+      }
+      .btn3:active {
+        color: #fff;
+        text-decoration: underline;
+      }
+      .btn4:disabled {
+        color: #4a5568;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn-group">
+      <div class="defalut">
+        <button class="btn1" type="button">Button</button>
+        <button class="btn1-1" type="button">Yes</button>
+        <button class="btn1-2" type="button">Del</button>
+      </div>
+
+      <div class="hover">
+        <button class="btn2" type="button">Button</button>
+        <button class="btn2-1" type="button">Yes</button>
+        <button class="btn2-2" type="button">Del</button>
+      </div>
+
+      <div class="active">
+        <button class="btn3" type="button">Button</button>
+        <button class="btn3-1" type="button">Yes</button>
+        <button class="btn3-2" type="button">Del</button>
+      </div>
+
+      <div class="disabled">
+        <button class="btn4" type="button" disabled>Button</button>
+      </div>
+    </div>
+  </body>
+</html>

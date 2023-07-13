@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>min(), max()</title>
+    <style>
+      .wrap {
+        background-color: slateblue;
+        margin: auto;
+
+        /* width: 1000px; */
+        /* max-width: calc(100% - 80px); */
+
+        /* min안의 값 중 작은 값을 골라라 위의 두 줄과 동일*/
+        width: min(1000px, calc(100% - 80px));
+
+        /* 둘중에 큰 값을 골라라 */
+        /* width: max(1000px, calc(100% - 80px)); */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">hello</div>
+  </body>
+</html>

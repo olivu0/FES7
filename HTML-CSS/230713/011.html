@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table</title>
+    <style>
+      table {
+        width: 100%;
+      }
+      caption {
+        /* 위치를 정하고 싶으면 이렇게 지정해야함. 쓸거면 table의 첫번째 자식으로 들어가야함 */
+        caption-side: bottom;
+      }
+      /* 열 column */
+      .col1 {
+        background-color: gold;
+        width: 10%;
+      }
+      .col2 {
+        background-color: #ddd;
+      }
+      .col3 {
+        background-color: #eee;
+      }
+      /* 행 row */
+      tbody tr:nth-child(1) {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h2>테이블의 제목</h2> -->
+    <table>
+      <caption>
+        테이블의 제목, 설명
+      </caption>
+
+      <colgroup>
+        <col class="col1" />
+        <col style="width: 20%" span="2" class="col2" />
+        <col class="col3" />
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th scope="col">제목</th>
+          <th scope="col">제목</th>
+          <th scope="col">제목</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">제목</th>
+          <td colspan="2">내용</td>
+          <td>내용</td>
+        </tr>
+        <tr>
+          <th>제목</th>
+          <td>내용</td>
+          <td rowspan="2">내용</td>
+          <td>내용</td>
+        </tr>
+        <tr>
+          <th>제목</th>
+          <td>내용</td>
+          <td>내용</td>
+        </tr>
+      </tbody>
+      <!-- tfoot 사용은 잘 안한다 생략해도 되는 내용 -->
+      <tfoot>
+        <tr>
+          <th>합계</th>
+          <td>내용</td>
+          <td>내용</td>
+          <td>내용</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

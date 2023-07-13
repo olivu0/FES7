@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css 변수</title>
+    <style>
+      /* 전역변수 */
+      :root {
+        --main-color: darkorange;
+        --pane-padding: 0.5em 2em;
+        --border-radius: 0.4em;
+      }
+      button {
+        --border-width: 1px 2px 3px 4px;
+
+        color: var(--main-color, blue);
+        padding: var(--pane-padding);
+
+        border-color: var(--color2);
+        border-radius: var(--border-radius);
+        border-width: var(--border-width);
+      }
+      p {
+        border-color: var(--main-color, yellow);
+        border-style: solid;
+        border-width: var(--border-width, 1px 2px);
+      }
+      /* 지역변수 */
+      .dark {
+        --bg1: #000;
+        --color1: white;
+      }
+      .light {
+        --bg1: #eee;
+        --color1: black;
+      }
+      section {
+        --color2: red;
+        background-color: var(--bg1);
+        color: var(--color1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dark">
+      <section>
+        <button type="button">버튼</button>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, ullam ab! Odio tenetur id corporis iusto minus alias nesciunt minima quaerat et labore! Repudiandae eveniet dolor
+          accusamus commodi? Sapiente, enim!
+        </p>
+      </section>
+    </div>
+
+    <div class="light">
+      <section>
+        <button type="button">버튼</button>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, ullam ab! Odio tenetur id corporis iusto minus alias nesciunt minima quaerat et labore! Repudiandae eveniet dolor
+          accusamus commodi? Sapiente, enim!
+        </p>
+      </section>
+    </div>
+    <!-- 변수도 상속 가능 -->
+    <button type="text">버튼</button>
+  </body>
+</html>

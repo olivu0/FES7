@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>011.table-decoration</title>
+    <style>
+      table {
+        width: 100%;
+        /* 겹치게 그려준다 */
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #eee;
+      }
+
+      .col1 {
+        width: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <h2>테이블의 제목</h2> -->
+    <table>
+      <caption>
+        테이블의 제목, 설명
+      </caption>
+      <colgroup>
+        <col style="width: 100px" class="col1" />
+        <col style="width: 100px" class="col2" />
+        <col style="width: 100px" class="col3" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th scope="col">제w0awreoffjeofofhofhofjfofjapoejfif목</th>
+          <th scope="col">제목</th>
+          <th scope="col">제목</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">제ddfsfsaf목</th>
+          <td>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil mollitia reiciendis nisi ratione et quidem voluptas quod. Aliquam pariatur ad sequi, veniam culpa beatae laboriosam nemo illo
+            libero optio unde?
+          </td>
+          <td>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque quae iusto sed repellat! Maiores in similique laborum vel. Voluptatem reiciendis dignissimos et ex impedit similique, nulla
+            laboriosam amet perspiciatis quaerat!
+          </td>
+          <td>냐옹</td>
+        </tr>
+        <tr>
+          <th>제목</th>
+          <td>내용</td>
+          <td>내용</td>
+          <td>내용</td>
+        </tr>
+        <tr>
+          <th>제목</th>
+          <td>내용</td>
+          <td>냐옹</td>
+          <td>내용</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>합계</th>
+          <td>내용</td>
+          <td>내용</td>
+          <td>내용</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

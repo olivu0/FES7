@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모달창 띄워주기</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .modal {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        text-align: center;
+        background-color: #fff;
+        box-sizing: border-box;
+
+        /* 모달창 가운데 정렬!! */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        /* 계산하는 방법 */
+        position: fixed;
+        top: calc(50% - (100px / 2));
+        left: calc(50% - (200px / 2));
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt praesentium harum architecto placeat molestias repellendus eligendi, quae voluptate labore voluptatibus vel eius quis expedita,
+      ratione omnis ut enim delectus inventore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae minus natus, nostrum sed aut velit architecto inventore saepe tempore enim odit,
+      asperiores illo nam tempora commodi est accusamus voluptatem laborum? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores eaque adipisci autem ipsam hic culpa excepturi itaque
+      expedita illo laborum nemo totam sequi et eveniet impedit, tempora dolore tempore. Praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, vitae sequi dolor ea enim
+      assumenda, deserunt, laborum error distinctio magnam doloremque repellat iusto tenetur neque. Suscipit illum fugiat maxime non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+      deserunt tempore, commodi nihil aspernatur earum, fuga hic nostrum fugiat exercitationem, consectetur eligendi? Tempore, at et nostrum fuga incidunt accusamus molestiae? Lorem ipsum, dolor sit
+      amet consectetur adipisicing elit. Aperiam, quis adipisci, doloribus nesciunt perferendis corporis ducimus molestias tempora facilis ut animi minima odit voluptate illo? Incidunt ullam placeat
+      culpa illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe modi assumenda eligendi pariatur! Temporibus, perspiciatis? Nostrum odio vero, eum tenetur pariatur repellat dicta
+      minima mollitia minus et aliquam sequi adipisci? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque amet libero et? Mollitia ad ea fuga placeat? Earum culpa eos nisi recusandae
+      magni aperiam ducimus pariatur voluptate perferendis, fuga repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique repellendus dicta nostrum libero rem delectus corrupti,
+      adipisci totam recusandae excepturi expedita iusto quae, pariatur dolorem nisi iure, ad deleniti. Minus?
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt praesentium harum architecto placeat molestias repellendus eligendi, quae voluptate labore voluptatibus vel eius quis expedita,
+      ratione omnis ut enim delectus inventore!
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt praesentium harum architecto placeat molestias repellendus eligendi, quae voluptate labore voluptatibus vel eius quis expedita,
+      ratione omnis ut enim delectus inventore!
+    </p>
+
+    <div class="modal">
+      <p>삭제하시겠습니까?</p>
+      <button type="button">취소</button>
+      <button type="button">삭제</button>
+    </div>
+  </body>
+</html>
