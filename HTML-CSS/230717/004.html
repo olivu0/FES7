@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid - autofill, autofit</title>
+    <style>
+      .container {
+        display: grid;
+        /* width: 600px; */
+        width: auto;
+        gap: 10px;
+        background: #ddd;
+        margin-bottom: 10px;
+        border: 10px solid #aaa;
+      }
+
+      .container div {
+        background: skyblue;
+        height: 100px;
+        /* border: 10px solid royalblue; */
+        box-sizing: border-box;
+      }
+
+      /* 게시물 여러개 올리는 것
+      게시물이 하나도 안올라왔을때, 하나만 올라왔을때 어떻게 처리해야할지 grid로 하면 좋다
+      게시물 크기를 늘릴건지 autofit, 빈공간을 두고 올릴건지 autofill */
+
+      .autofill {
+        /* 줄바꿈시 빈공간이 남지 않음 */
+        grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+        /* 줄바꿈시 빈공간이 남음 */
+        /* grid-template-columns: repeat(auto-fill, 200px); */
+      }
+
+      .autofit {
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container autofill">
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+
+    <div class="container autofit">
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+  </body>
+</html>
