@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #5a6a72;
+}
+
+input {
+  border: none;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+header {
+  display: flex;
+  height: 120px;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #fff;
+}
+
+h1 img {
+  width: 156px;
+  height: 75px;
+}
+
+h1 a::before {
+  background-image: url(../img/icon-join.svg);
+}
+
+body {
+  background-color: #fffaf0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 .login-text {
+  color: #29363d;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+form > label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.email-text,
+.pw-text {
+  color: #29363d;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+input {
+  width: 392px;
+  height: 48px;
+
+  border-radius: 4px 4px 0px 0px;
+  border-bottom: 1px solid #677880;
+  background: #fff;
+}
+
+.login-btn {
+  width: 392px;
+  height: 48px;
+  border-radius: 4px;
+  color: #f4f5f5;
+  background-color: #29363d;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+footer > p {
+  color: #677880;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+
+  text-align: center;
+  margin-top: 52px;
+}
