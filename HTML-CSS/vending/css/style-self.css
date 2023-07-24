@@ -1,0 +1,181 @@
+/* reset */
+body,
+h1,
+h2,
+ul,
+p,
+button {
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font: inherit;
+}
+ul,
+li {
+  list-style: none;
+}
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+}
+button:enabled {
+  cursor: pointer;
+}
+img {
+  vertical-align: top;
+}
+input {
+  font: inherit;
+}
+
+/* 공통 css */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* css style */
+body {
+  background-color: #eae8fe;
+  font-family: "Noto Sans KR", sans-serif;
+}
+h1 {
+  text-align: center;
+}
+h1 img {
+  max-width: 50%;
+}
+
+/* main layout */
+main {
+  width: 748px;
+  max-width: 100%;
+  display: grid;
+  gap: 20px 28px;
+}
+/* main layout 반응형 */
+@media (min-width: 749px) {
+  main {
+    grid-template-areas:
+      "section1 section2"
+      "section1 section3";
+    gap: 20px 28px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px auto;
+    margin: 67px auto;
+  }
+}
+@media (max-width: 748px) {
+  main {
+    grid-template-areas:
+      "section1"
+      "section2"
+      "section3";
+    grid-template-columns: 100%;
+    margin: 18px auto;
+  }
+  body {
+    background-color: white;
+  }
+}
+
+.section1 {
+  background-color: palegoldenrod;
+  grid-area: section1;
+  padding: 30px 27px;
+}
+
+.section2 {
+  background-color: palegreen;
+  grid-area: section2;
+}
+.section3 {
+  background-color: paleturquoise;
+  grid-area: section3;
+}
+
+.cola-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+[class^="btn"] {
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  min-height: 32px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+}
+.btn-cola {
+  border-radius: 10px;
+  padding: 11px 12px 9px 12px;
+}
+/* 원래 다 inline => 한줄씩 차지하게 block으로 변경 */
+.btn-cola img,
+.cola-name,
+.cola-price {
+  display: block;
+}
+.btn-cola img {
+  width: 36px;
+  margin: auto;
+}
+.cola-name {
+  font-size: 9px;
+  margin: 6px 0;
+}
+.cola-price {
+  font-size: 12px;
+  background-color: #6327fe;
+  color: white;
+  border-radius: 50px;
+  font-weight: normal;
+  padding: 5px 0;
+}
+.btn-cola.on {
+  box-shadow: 0 0 0 4px #6327fe;
+}
+.btn-cola:disabled {
+  color: inherit;
+  position: relative;
+}
+
+.btn-cola:disabled::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.soldout {
+  color: #eae8fe;
+  font-size: 14px;
+  z-index: 10;
+  border: 4px double #eae8fe;
+
+  width: 45px;
+  position: absolute;
+  /* top, left: 50% => 가장 위 왼쪽 꼭지점이 가장 중앙에 옴 */
+  top: 50%;
+  left: 50%;
+  /* 위쪽으로 50%, 왼쪽으로 50% 오게하면 중앙 정렬 완성 */
+  transform: translate(-50%, -50%) rotate(-18deg);
+}
