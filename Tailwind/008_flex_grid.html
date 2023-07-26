@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- https://tailwindcss.com/docs/grid-template-columns -->
+    <!-- https://tailwindcss.com/docs/grid-column -->
+    <!-- https://tailwindcss.com/docs/grid-template-rows -->
+
+    <!-- space-y-4 0.25 * 4 = 1rem -->
+    <div class="space-y-4">
+      <p class="text-3xl">1</p>
+      <p>hello</p>
+      <div class="grid grid-cols-4 border-2 border-red-500">
+        <div class="border-2 border-sky-500">hello</div>
+        <div class="border-2 border-sky-500">hello</div>
+        <div class="border-2 border-sky-500">hello</div>
+        <div class="border-2 border-sky-500">hello</div>
+        <div class="border-2 border-sky-500">hello</div>
+        <div class="border-2 border-sky-500">hello</div>
+        <div class="border-2 border-sky-500">hello</div>
+      </div>
+    </div>
+
+    <p class="text-3xl">2</p>
+    <p>hello</p>
+    <!-- column 설정 많이함 -->
+    <!-- 4 -> 3 -> 1 -->
+    <div class="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-1 border-2 border-red-500">
+      <div class="border-2 border-sky-500">hello</div>
+      <div class="border-2 border-sky-500">hello</div>
+      <div class="border-2 border-sky-500">hello</div>
+      <div class="border-2 border-sky-500">hello</div>
+      <div class="border-2 border-sky-500">hello</div>
+    </div>
+  </body>
+</html>
