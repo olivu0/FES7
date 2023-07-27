@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 005_lotto2를 반복되는 것 6개를 반복문 처리함
+      // for (시작, 끝, 증가) {
+      // 반복하려는 코드
+      // }
+
+      /* var lotto = [];
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      document.write(lotto) */
+
+      var lotto = [];
+      for (var i = 0; i < 6; i++) {
+        lotto.push(parseInt(Math.random() * 45 + 1));
+      }
+      document.write(lotto);
+    </script>
+  </body>
+</html>

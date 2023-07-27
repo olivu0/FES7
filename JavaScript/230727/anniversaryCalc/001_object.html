@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체 Object</title>
+  </head>
+  <body>
+    <script>
+      var person = {
+        name: "boo",
+        age: 27,
+        hobby: ["코딩", "수영"],
+        sayHello: function () {
+          console.log("i'm boo");
+        }, // 메소드
+      };
+
+      console.log(person.name);
+      person.sayHello();
+      console.log(person.age);
+      console.log(person.hobby[1]);
+
+      //   content.length(); // 객체를 사용하는 것
+      //   document.write(); // document도 객체
+      //   console.log(); // console 객체 사용
+    </script>
+  </body>
+</html>

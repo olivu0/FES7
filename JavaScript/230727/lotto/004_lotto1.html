@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 1~45개의 공 중 6개 뽑기
+
+      // step1. 공 1개 뽑기
+      // Math.random(); => 0이상 1미만 임의의 실수(float)
+      var num = Math.random();
+      // document.write(num);
+
+      // 0 <= Math.random() < 1
+      // 0 <= Math.random() * 45 < 45
+      // 1 <= Math.random() * 45 + 1 < 46
+
+      // parseInt() => 소수점을 버리고 정수로 변환
+
+      var num2 = Math.random() * 45 + 1;
+      var ball1 = parseInt(num2);
+      document.write(ball1);
+    </script>
+  </body>
+</html>

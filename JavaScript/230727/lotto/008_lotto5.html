@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 007_lotto4.html 에서의 코드는 같은 숫자가 있으면 안뽑기 때문에 중복되는 숫자가 있으면 6개가 제대로 다 나오지 않음
+
+      /*
+    while(조건) {
+      반복하려는 코드
+    }
+    */
+
+      // lotto배열의 공이 5개 일때 반복문을 한번 더 돌면 6개가 됨
+      var lotto = [];
+      while (lotto.length < 6) {
+        var num = parseInt(Math.random() * 45 + 1);
+        if (lotto.indexOf(num) === -1) {
+          lotto.push(num);
+        }
+      }
+      document.write(lotto);
+    </script>
+  </body>
+</html>

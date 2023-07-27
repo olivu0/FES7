@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 배열(Array)
+      var arr = [1, 2, 3, 4, 5, 6];
+      // document.write(arr[2]);
+
+      // array.push() 마지막 값에 추가
+      arr.push(7);
+      // document.write(arr);
+
+      // lotto에 6자리 넣기
+      var lotto = [];
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+
+      // for문으로 6개 생성
+      for (let i = 0; i <= 5; i++) {
+        lotto.push(parseInt(Math.random() * 45 + 1));
+      }
+      document.write(lotto);
+    </script>
+  </body>
+</html>

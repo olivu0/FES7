@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>jQuery 기초</h1>
+    <textarea id="content">jQuery를 배워보자</textarea>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+      /*
+    javascript를 이용해 돔을 제어해서 html의 요소를 선택하고 값을 가져오려면
+    document.getElementById('content').value;
+    이것을 jQuery로 만들면 $('#content').val(); 짧게 가능하다
+    */
+
+      // jQuery: 자바스크립트를 쉽게 사용할 수 있게 해주는 라이브러리
+      // 장점: 간결한 문법, 편리한 api, 크로스 브라우징 문제 해결
+
+      // code.jquery.com 에서 minified를 선택해 복사해 script에 붙여 넣으면 제이쿼리 사용 가능!!
+      // cdn 인터넷에 올라온 제이쿼리 라이브러리 사용 가능함
+
+      // jQuery 기본문법
+      // $(선택자).행위;
+      // 아이디가 content인 요소를 선택해 value를 가져옴
+      console.log($("#content").val());
+    </script>
+  </body>
+</html>

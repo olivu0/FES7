@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기념일 계산기</title>
+    <style>
+      * {
+        color: #333333;
+      }
+      p {
+        margin-bottom: 1px;
+      }
+      .photos {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #duhee {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 30px;
+      }
+      #jisook {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 30px;
+      }
+      #heart {
+        width: 50px;
+        height: 50px;
+      }
+      .gray {
+        color: #a0a0a0;
+      }
+      .special-day {
+        display: flex;
+        justify-content: space-between;
+      }
+      .title {
+        display: flex;
+        align-items: center;
+      }
+      .days-left {
+        text-align: right;
+      }
+      .date {
+        text-align: right;
+        color: #a0a0a0;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="photos">
+      <img id="duhee" src="./images/duhee.jpeg" alt="duhee" />
+      <img id="heart" src="./images/heart.png" alt="heart" />
+      <img id="jisook" src="./images/jisook.jpeg" alt="jisook" />
+    </section>
+    <div class="container d-flex flex-column justify-content-center align-items-center mt-3">
+      <h3>두희♥지숙</h3>
+      <h3 id="love">0일째</h3>
+      <h4 class="date">2020.6.30</h4>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+      // 만난 밀리초 = 오늘.getTime() - 사귄날.getTime()
+      // 만난 일 = 만난 밀리초를 일로 환산
+      let now = new Date(); // 현재 시간 시점
+      let start = new Date("2020-06-30"); // 사귄날
+
+      let timeDiff = now.getTime() - start.getTime(); // 만난 기간 밀리초
+
+      let day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1); // 처음 만난날 1일
+      $("#love").text(day + "일째");
+      console.log(day);
+    </script>
+  </body>
+</html>
