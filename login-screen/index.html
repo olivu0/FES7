@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login | join</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main id="appLogin">
+      <article class="modal-login">
+        <header class="header">
+          <h1 class="log-join-title">로그인 또는 회원가입</h1>
+          <a href="./">
+            <img class="close" src="./images/close.png" alt="" />
+          </a>
+        </header>
+
+        <div class="wrapper">
+          <div class="main">
+            <p>위니브에서 여러분의 궁금증을 해결하세요! :)</p>
+
+            <div class="input-text">
+              <label for="input-id"></label>
+              <input id="input-id" placeholder="아이디" type="text" />
+              <p>아이디를 입력해 주세요.</p>
+            </div>
+
+            <div>
+              <label for="input-pw"></label>
+              <input id="input-pw" type="password" placeholder="비밀번호" />
+            </div>
+
+            <!-- 로그인 상태 유지 - custom input box -->
+            <div class="keep-check">
+              <input type="checkbox" id="keep" />
+              <label for="keep">로그인 상태유지</label>
+            </div>
+
+            <button class="main-login">로그인</button>
+
+            <div class="login-another-page">
+              <a href="./">회원가입</a>
+              <span>|</span>
+              <a href="./">아이디/비밀번호 찾기</a>
+            </div>
+          </div>
+
+          <!-- 구분선 -->
+          <div class="division">
+            <div class="hr"></div>
+            <p class="text">또는</p>
+            <div class="hr"></div>
+          </div>
+
+          <div class="login-group">
+            <h3 class="a11y-hidden">소셜서비스로 로그인</h3>
+
+            <ul class="sns-login">
+              <li>
+                <a href="./" class="icon-google link-sns-login"> 구글 계정으로 로그인 </a>
+              </li>
+              <li>
+                <a href="./" class="icon-facebook link-sns-login"> 페이스북 계정으로 로그인 </a>
+              </li>
+              <li>
+                <a href="./" class="icon-naver link-sns-login"> 네이버 계정으로 로그인 </a>
+              </li>
+              <li>
+                <a href="./" class="icon-kakao link-sns-login"> 카카오톡 계정으로 로그인 </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
