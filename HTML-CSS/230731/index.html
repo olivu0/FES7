@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      img {
+        /* 화면크기에 따라 동적으로 변함, 이미지가 깨질 위험이 있음 */
+        width: 100%;
+        /* 원본 크기 이상 늘어나지 않음. 원본 사이즈 지킴 */
+        /* max-width: 100%; */
+      }
+      article {
+        /* 뷰포트 너비만큼 꽉 채워짐 */
+        width: 100vw;
+        height: 100vh;
+      }
+
+      body {
+        margin: 0;
+      }
+      article {
+        /* background-image: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHw%3D&w=1000&q=80"); */
+        /* background-repeat: no-repeat; */
+
+        /* cover vs contain : 둘다 꽉차는 건 똑같음 */
+        /* cover: 여백없이 꽉 채움, 잘려도 상관없음 공간만큼 자기 자신을 꽉 채움 */
+        /* background-size: cover; */
+
+        /* contain: (빈 공백 존재)이미지를 온전히 보존하려는 성질이 있음, 잘리는 부분 없이 반응형으로 꽉 채움 */
+        /* background-size: contain; */
+
+        /* 화면의 중심점이 중간을 차지해 반응형처럼 중심축 이동시킴 */
+        /* background-position: 50% 50%; */
+        /* background-position: center; */
+
+        /* background: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHw%3D&w=1000&q=80") 50% 50% / cover no-repeat; */
+
+        background: url("./logo_google.jpeg") center / contain no-repeat;
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <!-- <img src="./images.jpeg" alt="" /> -->
+      <video src=""></video>
+    </article>
+  </body>
+</html>
