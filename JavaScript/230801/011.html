@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+  </head>
+  <body>
+    <script>
+      let s = "abcdefghij";
+
+      console.log(s.length);
+      console.log(s.toUpperCase()); // 대문자로
+      console.log(s.toLowerCase()); // 소문자로
+
+      // 찾는 것이 있으면 index number 반환
+      console.log(s.indexOf("c")); // 2
+      console.log(s.search("c")); // 2
+
+      // 찾는 것이 없으면 -1 반환
+      console.log(s.indexOf("z")); // 찾는 것이 없으면 -1
+      console.log(s.search("z")); // -1
+
+      // 정규표현식을 넣었을 때 (indexOf 같은 경우는 정규표현식을 허용하지 않음)
+      console.log(s.indexOf(/cd/g)); // -1
+      console.log(s.search(/cd/g)); // 2
+
+      let ss = "paullab ceo 이호준 cto 홍길동";
+      console.log(ss.search(/c/g)); // 8
+      console.log(ss.search(/cto/g)); // 16
+
+      // 버전
+      // indexOF ECMAScript 5
+      // 검색 위치 지정 가능
+      // search ECMAScript 1
+      // 정규표현식 가능
+
+      // 검색 위치 지정 가능 기능(많이 안씀)
+      let sss = "paullab ceo 이호준 cto 홍길동";
+      console.log(sss.indexOf("c", 11)); //cto만 찾을 때
+    </script>
+  </body>
+</html>

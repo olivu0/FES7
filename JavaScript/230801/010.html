@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String</title>
+  </head>
+  <body>
+    <script>
+      // 문자열은 작은따옴표('')나 큰따옴표(""), 백틱(`)로 둘러싼 일련의 문자를 가리킨다
+      let a = "hello\nworld";
+      let b = `hello
+    world`;
+      console.log(a);
+      console.log(b);
+
+      let age = 10;
+      // ${변수}
+      console.log(`홍길동의 나이는 ${age}살 입니다.`);
+      console.log(`홍길동의 나이는 ${age * 2}살 입니다.`);
+      console.log("홍길동의 나이는 " + age + "살 입니다.");
+
+      // 순서 출력
+      let name = "이부영";
+      console.log(name[0]); // 이
+      // 자바스크립트에서는 문자열의 순서를 넘어갔을 때 에러가 발생하지 않고 undefined를 출력한다
+      console.log(name[3]); // undefined
+      // minus index는 없다
+      console.log(name[-1]); // undefined
+
+      // 문자열의 사칙연산
+      console.log("1" + 2 + 3); // 123 다른언어 error
+      console.log(2 + 3 + "1"); // 51  다른언어 error
+      console.log(2 + 3 + +"1"); // 6 다른언어 error
+      console.log("b" + "a" + +"a"); // +'a'이 NaN baNaN
+
+      console.log("lee" + "booyoung"); // 'Leebooyoung'
+      console.log("boo" * 3); // NaN
+
+      // 형변환
+      console.log("1" + "1"); // 11이 아니라 2가 출력되게 할 수 있을까?
+
+      console.log(+"1" + +"1"); // 2, 권장하지 않음
+      console.log(Number("1") + Number("1")); // 2, 권장하지 않음
+      console.log(parseInt("1") + parseInt("1")); // 2, 권합니다!
+
+      console.log(Number("100a")); // NaN
+      console.log(parseInt("100a")); // 100
+
+      console.log(String(1) + String(1)); // 권장하지 않음
+      // console.log(1.toString() + 1.toString()); //가능한 코드가 아님
+      console.log((1).toString() + (1).toString()); //가능한 코드
+      let x = 10;
+      console.log(x.toString() + x.toString()); // 1010 권장한다
+
+      console.log(parseFloat(10.5)); // 10.5
+      console.log(parseInt(10.5)); // 10
+    </script>
+  </body>
+</html>
