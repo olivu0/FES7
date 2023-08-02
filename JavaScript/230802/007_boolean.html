@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 0만 false이고 나머지 다른 숫자는 모두 true이다
+      // 1번 연습문제
+      console.log(true && false); // false
+      console.log(false && true); // false
+      console.log(false || true); // true
+      console.log(true || true); // true
+
+      // 2번 연습문제
+      console.log(!!"가"); // true
+      console.log(!""); // true
+
+      // 3번 연습문제 (단락 회로 평가) - https://olivu0young.tistory.com/35
+      // 단락회로평가: 표현식을 평가하는 도중에 평가 결과가 확정된 경우 나머지 평가 과정을 생략하는 것을 말한다
+      // 평가 결과가 결정되는 순간 그것을 return
+      !!"가"; // true 라고 평가
+      Boolean("가"); // true 평가
+      console.log("가" && "나"); // true(x) 나 출력, true로 평가
+      console.log(0 && -1); // false(x) 0 뒤의 것 볼 필요가 없으니 0
+      console.log(0 && 1); // false(x)  0 뒤의 것 볼 필요가 없으니 0
+      console.log(1 && 1); // true (x)  1 뒤의 것 볼 필요가 있음 1
+      console.log(1 && "hi"); // 1의 뒤의 것 볼 필요가 있음 'hi'
+      console.log(1 && true); // true 1의 뒤의 것 볼 필요가 있음 true
+      console.log(0 || true); // true 0의 뒤의 것 볼 필요가 있음 true
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습문제</title>
+  </head>
+  <body>
+    <script>
+      // https://school.programmers.co.kr/learn/courses/30/lessons/120906?language=javascript
+      // 나의 풀이
+      // 1234
+      // int -> string으로 바꿔서 하나씩 순회하면서 sum 변수에 더해줌
+      let n = 1234;
+      // let str = n.toString();
+      let sum = 0;
+      for (i of n.toString()) {
+        sum += parseInt(i);
+      }
+      console.log(sum);
+
+      // 1번째 풀이
+      let answer = 0;
+      let inputValue = 1234;
+
+      inputvalue = "" + inputValue; //권장하지 않음
+      answer += +inputValue[0];
+      answer += +inputValue[1];
+      answer += +inputValue[2];
+      answer += +inputValue[3];
+
+      // 2번째 풀이
+      // let answer = 0;
+      // let inputValue = 1234;
+
+      inputValue = inputValue.toString(); // '1234'
+      answer += parseInt(inputValue[0]);
+      answer += parseInt(inputValue[1]);
+      answer += parseInt(inputValue[2]);
+      answer += parseInt(inputValue[3]);
+
+      // 3번째 풀이(c언어 스타일)
+      // let answer = 0;
+      // let inputValue = 1234;
+
+      answer = answer + (inputValue % 10); // 0 -> 4
+      inputValue = parseInt(inputValue / 10); // 1234 -> 123
+
+      answer = answer + (inputValue % 10); // 4 -> 7
+      inputValue = parseInt(inputValue / 10); // 123 -> 12
+
+      answer = answer + (inputValue % 10); // 7 -> 9
+      inputValue = parseInt(inputValue / 10); // 12 -> 1
+
+      answer = answer + (inputValue % 10); // 9 -> 10
+      inputValue = parseInt(inputValue / 10); // 1 -> 0
+
+      // 4번째 풀이(안배운 reduce 사용)
+      // let inputValue = 1234;
+
+      inputValue
+        .toString()
+        .split("")
+        .reduce((a, c) => a + parseInt(c), 0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boolean</title>
+  </head>
+  <body>
+    <!-- true, false -->
+    <script>
+      // true, false
+      // $$(and, 논리곱), ||(or, 논리합), !(not, 부정)
+      // $(and, 비트논리곱), |(or, 비트논리합), ~(not, 비트부정)
+
+      // and나 or도 뒤를 볼 필요가 없으면 보지 않는다
+      Boolean("가");
+      !!"가"; // true
+      !!""; // false
+
+      // and(논리곱)
+      console.log(true && true); // true
+      console.log(true && false); // false
+      console.log(false && true); // false
+      console.log(false && false); // false
+      console.log("가" && "나"); // '나'
+      console.log("" && "나"); // 빈문자열
+
+      // or(논리합)
+      console.log(true || true); // true
+      console.log(true || false); // true
+      console.log(false || true); // true
+      console.log(false || false); // false
+
+      let username = "leebooyoung";
+      console.log(username || "이름없음"); // leebooyoung
+
+      let username1 = "";
+      console.log(username1 || "이름없음"); // 이름없음
+
+      // falsy 값(6): false, '', 0, null, undefined, NaN
+
+      // not 부정
+      console.log(!true); // false
+      console.log(!false); // true
+
+      // https://codingdojang.com/scode/350?answer_mode=hide
+      // 10미만의 자연수에서 3과 5의 배수를 구하면 3,5,6,9이다. 이들의 총합은 23이다.
+      // 100미만의 자연수에서 3,5의 배수의 총합을 구하라.
+      for (let i = 0; i < 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log(i);
+        }
+      } // 15의 배수 출력
+      for (let i = 0; i < 100; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          console.log(i);
+        }
+      } // 3, 5의 배수 모두 반환
+
+      // 매우 중요하지 않습니다. 실무에서는 거의 사용하지 않지만 알고리즘 문제에서는 간혹 등장한다
+      console.log(3 & 5); // 1
+
+      // 0011
+      // 0101
+      //------
+      // 0001
+
+      console.log(3 | 5); // 7
+
+      // 0011
+      // 0101
+      //------
+      // 0111
+
+      // kakao
+      // https://tech.kakao.com/2017/09/27/kakao-blind-recruitment-round-1/
+      (9 | 30).toString(2).replaceAll("0", " ").replaceAll("1", "#");
+      (20 | 1).toString(2).replaceAll("0", " ").replaceAll("1", "#");
+
+      // 보충 설명
+      for (let i = 0; i < 100; i++) {
+        // && 는 둘다 만족하면 실행시켜라
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log(i);
+        }
+      } // 15의 배수 출력
+      for (let i = 0; i < 100; i++) {
+        // || 둘 중 하나만 만족하면 실행시켜라
+        if (i % 3 === 0 || i % 5 === 0) {
+          console.log(i);
+        }
+      } // 3, 5의 배수 모두 반환
+
+      // if의 중첩은 논리연산자로 대체할 수 있다
+      for (let i = 0; i < 100; i++) {
+        // && 는 둘다 만족하면 실행시켜라
+        if (i % 3 === 0) {
+          if (i % 5 === 0) {
+            console.log(i);
+          }
+        }
+      } // 15의 배수 출력
+    </script>
+  </body>
+</html>
