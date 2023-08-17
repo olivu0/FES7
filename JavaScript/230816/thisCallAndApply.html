@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // call: 함수의 메소드
+      var peter = {
+        name: "Peter Parker",
+        sayName: function (event) {
+          console.log(this.name + event);
+        },
+      };
+
+      var bruce = {
+        name: "Bruce Wayne",
+      };
+      // call 메소드를 통해 bruce 인자 호출
+      // call 메소드를 통해 this의 대상을 peter에서 bruce로 변경
+      peter.sayName.call(bruce); // Bruce Wayne
+      peter.sayName.call(bruce, "!!!"); // Bruce Wayne!!!
+
+      // call vs apply
+      // argument의 형태가 다르다
+      // argument: argument를 단일한 배열로 전달
+
+      var peter = {
+        name: "Peter Parker",
+        sayName: function (is, is2) {
+          console.log(this.name + " is " + is + " or " + is2);
+        },
+      };
+
+      var bruce = {
+        name: "Bruce Wayne",
+      };
+      // apply 사용시 꼭 하나의 배열로 써야한다.
+      peter.sayName.apply(bruce, ["batman", "richman"]);
+      peter.sayName.call(bruce, "batman", "richman");
+
+      // bind()
+      function sayName() {
+        console.log(this.name);
+      }
+
+      var bruce = {
+        name: "bruce",
+        sayName: sayName,
+      };
+
+      var peter = {
+        name: "peter",
+        // this값이 bruce로 고정된
+        sayName: sayName.bind(bruce),
+      };
+
+      peter.sayName(); // bruce
+      bruce.sayName(); // bruce
+    </script>
+  </body>
+</html>

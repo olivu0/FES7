@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <button id="btn1">클릭해봐요!</button>
+    <button id="btn2">클릭해봐요!</button>
+    <script>
+      let myObj = {
+        val1: 100,
+        func1: function () {
+          console.log(this);
+        },
+      };
+
+      let test = myObj.func1;
+
+      // document의 메소드 getElementById, documnet === html 문서
+      // window.document.getElementById('btn1'); window가 생략된 것
+      let button1 = document.getElementById("btn1");
+      button1.addEventListener("click", myObj.func1);
+
+      let button2 = document.getElementById("btn2");
+      button2.addEventListener("click", test);
+    </script>
+  </body>
+</html>
+
+this 키워드를 가지고 있는 함수를 호출하는 객체

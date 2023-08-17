@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      // 메소드의 this는 메소드를 호출하는 객체를 가리킨다
+
+      // a에서 this = person
+      // b에서 this = 상위스코프(상위에서 person을 보고있음) 즉 person
+      // c에서 this = 상위스코프(상위에서 person을 보고있음) 즉 person
+      const person = {
+        name: "hojun",
+        age: 25,
+        // person의 메소드
+        a() {
+          console.log(this);
+          console.log(this.name);
+          // 그냥 함수로 실행 => 이것의 this는 window를 가리킨다
+          function b() {
+            console.log(this);
+            console.log(this.name);
+            // 그냥 함수로 실행 => 이것의 this는 window를 가리킨다
+            function c() {
+              console.log(this);
+              console.log(this.name);
+            }
+            c();
+          }
+          b();
+        },
+      };
+      person.a();
+
+      //출력
+      // {name: 'hojun', age: 25, a: ƒ}
+      // hojun
+
+      // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+      // ''
+
+      // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+      // ''
+
+      // a에서 this = person
+      // b에서 this = 상위스코프(상위에서 person을 보고있음) 즉 person
+      // c에서 this = 상위스코프(상위에서 person을 보고있음) 즉 person
+      const person2 = {
+        name: "hojun",
+        age: 25,
+        a() {
+          console.log(this);
+          console.log(this.name);
+          let b = () => {
+            // peroson 객체 안에 선언된 화살표 함수여서 person 객체를 가리킴
+            // 화살표 함수는 일관성이 있다. = lexical scoping
+            console.log(this);
+            console.log(this.name);
+            let c = () => {
+              console.log(this);
+              console.log(this.name);
+            };
+            c();
+          };
+          b();
+        },
+      };
+      person2.a();
+
+      //출력
+      // {name: 'hojun', age: 25, a: ƒ}
+      // hojun
+
+      // {name: 'hojun', age: 25, a: ƒ}
+      // hojun
+
+      // {name: 'hojun', age: 25, a: ƒ}
+      // hojun
+
+      // 또다른 예시
+      // 화살표 함수의 this는 쓰는 순간 정해진다
+      // 전역에 this가 선언됨. => window 가리킴
+      let 인세규정 = {
+        책: 10,
+        영상콘텐츠: 50,
+      };
+
+      [100, 200, 300].map((e) => e * (this.책 / 100), 인세규정); // [NaN, NaN, NaN]
+      [100, 200, 300].map((e) => this, 인세규정); // [Window, Window, Window]
+    </script>
+  </body>
+</html>
