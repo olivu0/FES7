@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+
+  <body>
+    <script>
+      function square(number) {
+        console.log(arguments);
+        console.log(this);
+        return number * number;
+      }
+
+      console.log(square(2));
+
+      // this : 함수를 호출할 때 함수가 어떻게 호출 되었는지에 따라 this에 바인딩할 객체가 동적으로 결정
+
+      // 함수가 어떻게 호출 되었는지
+
+      // 1. 함수 호출
+      function foo() {}
+      foo(); // window
+      // window.foo();
+
+      // 2. 객체 내 메소드 호출
+      var obj = { foo: foo };
+      obj.foo(); // obj
+
+      // 3. 생성자 함수 호출
+      var instance = new foo(); // instance
+
+      // 4. apply/call/bind 호출
+      var bar = { name: "bar" };
+      foo.call(bar); // bar
+      foo.apply(bar); // bar
+      foo.bind(bar)(); // bar
+
+      // 1. 함수
+      // 전역 객체 (window) : 모든 객체의 유일한 최상위 객체
+      // 전역 변수 : 전역 스코프를 갖는 전역 객체의 프로퍼티
+      let globalVar = "Global variable";
+
+      console.log(globalVar);
+      console.log(window.globalVar);
+
+      // 전역 함수 : 전역 객체의 프로퍼티로 접근 가능한 메소드
+      function globalFunc() {
+        console.log("invoked!");
+      }
+      globalFunc();
+      window.globalFunc();
+
+      // this는 기본적으로 전역 객체(window)에 바인딩 된다 => window를 가리킨다.
+      // 전역함수, 내부 함수(함수 내 함수) => window
+      function outer() {
+        console.log("outer's this: ", this); // window
+        function inner() {
+          console.log("inner's this: ", this); // window
+        }
+        inner();
+      }
+      outer();
+
+      // 객체 내 메소드 => 객체
+      // 객체 내 메소드의 내부함수 => window
+      const value = 1;
+
+      const obj1 = {
+        value: 100,
+        method: function () {
+          const that = this; //this === obj1
+
+          console.log("method's this: ", this); // obj1
+          console.log("method's this.value: ", this.value); // 100
+          function inner() {
+            console.log("inner's this: ", this); // window
+            console.log("inner's this.value: ", this.value); // 1
+            // => this가 전역 객체를 가리키기 때문에 변수도 전역 변수 가리킴
+
+            // 내부 함수가 전역 객체가 아닌 특정 객체를 가리키려면 .. -> 권장하는건 아님. 설계 단계의 결함으로 메소드가 내부함수를 사용하여 자신의 작업을 돕게 할 수 없다.. 는 등의 이유로 전역 객체(window)를 바인딩하는거 라서!
+            // 1) 변수로 this를 미리 할당받아 사용하기
+            console.log("inner's that: ", that); // obj1
+            console.log("inner's that.value: ", that.value); // 100
+
+            // 2) this를 명시적으로 바인딩 할수있는 함수 apply, call, bind 사용하기
+            // 4번에서
+          }
+          inner();
+        },
+      };
+
+      obj1.method();
+
+      // 콜백 함수 => window
+      const obj2 = {
+        value: 100,
+        method: function () {
+          setTimeout(function () {
+            // 콜백함수
+            console.log("callback's this: ", this); // window
+            console.log("callback's this.value: ", this.value); // 1
+          }, 100);
+        },
+      };
+
+      obj2.method();
+
+      // 즉 내부함수는 일반 함수 내, 메소드 내, 콜백함수 어디에서 선언되었든 관계없이 this는 전역객체를 바인딩한다.
+
+      // 2. 메소드 함수
+      // 메소드 내부의 this는 해당 메소드를 소유한 객체, 즉 해당 메소드를 호출한 객체에 바인딩된다.
+      const obj3 = {
+        name: "Lee",
+        sayName: function () {
+          console.log(this.name); // obj3.name
+        },
+      };
+
+      const obj4 = {
+        name: "Kim",
+      };
+
+      obj4.sayName = obj3.sayName;
+
+      obj3.sayName(); // this = obj3
+      obj4.sayName(); // this = ???
+      // => sayName을 호출한 것은 obj4이기 때문에 this = obj4
+
+      // 3. 생성자 함수
+      // 생성자 = new 대문자로시작하는함수() 형식의 객체를 만들어내는 함수
+      // 동작 원리 : (1) 빈 객체 생성 및 this를 빈 객체에 바인딩 -> (2) this를 사용해 동적으로 프로퍼티와 메소드 생성 및 빈 객체에 추가 -> (3) 생성된 객체 반환 (생성자는 함수는 반환문 return을 권장하지 않음, 반환문 없으면 : 만든 객체 반환 / return this : 만든 객체 반환 / return 다른 객체 : 다른 객체 반환 -> 이렇게 생성자로 생성을 했는데, 다른 객체를 반환할 수 있어 반환문을 권장하지 않는것)
+
+      function Person(name) {
+        // 생성자 함수 코드 실행 전 --------------------(1)
+        this.name = name; // --------------------- (2)
+        //(반환문 없어도) 생성된 함수 반환 -------------- (3)
+      }
+
+      let p = new Person("Lee");
+      console.log(p.name);
+
+      // 생성자 함수 vs 일반 함수
+      // 일반함수와 생성자 함수에 특별한 형식적 차이는 없으며, 함수에 new 연산자를 붙여서 호출하면 해당 함수는 생성자 함수로 동작한다.
+
+      //그러나 생성자 함수의 목적은 : 객체 생성
+      //생성자 함수를 new 없이 호출하거나, 일반 함수에 new를 붙여 호출하면 오류가 발생할 수 있다.
+      // => 일반 함수와 생성자 함수의 호출 시 this 바인딩 방식이 다르기 때문이다.
+      // 일반 함수는 전역 객체 (window)에 this를 바인딩, 생성자 함수는 새로 생성한 빈 객체에 바인딩
+
+      function Person(name) {
+        // new없이 호출하는 경우, 전역객체 window에 name 프로퍼티를 추가
+        this.name = name;
+      }
+
+      // 일반 함수로서 호출되었기 때문에 객체를 암묵적으로 생성하여 반환하지 않는다.
+      // 일반 함수의 this는 전역객체를 가리킨다.
+      const me = Person("Lee");
+
+      console.log(me); // undefined
+      console.log(window.name); // Lee
+
+      // 위와 같이 생성자 함수를 new 없이 호출한 경우, 함수 Person 내부의 this는 전역객체를 가리키므로 name은 전역변수(window)에 바인딩된다.
+      // 또한 new 연산자로 생성자 함수를 호출하는 경우에는 자동으로 return 해주던 this가 있었는데
+      // (기억안나면 위에 생성자 함수 동작 원리 보기)
+      // 그냥 일반 함수로 생성자 함수를 대신하니 암묵적으로 반환하던 반환문이 없으므로 undefined를 반환하게 된다.
+    </script>
+  </body>
+</html>

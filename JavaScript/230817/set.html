@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      let a = new Set("abcde");
+      let b = new Set("def");
+      [...a]; // 배열로 바뀜. 원본은 그대로
+      // 교집합
+      let cross = [...a].filter((val) => b.has(val));
+      // 합집합
+      let union = new Set([...a].concat([...b]));
+      // 차집합
+      let diff = [...a].filter((x) => !b.has(x));
+    </script>
+  </body>
+</html>

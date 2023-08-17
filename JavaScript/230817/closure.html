@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // person이 return 되면 person이라는 함수는 사라진다
+      // 하지만 age는 어딘가 메모리에 남아있다
+      // 이유는 내부 메서드에서 age를 참조하고 있기 때문이다
+      // age에 대한 접근 권한은 return 객체에만 있다
+      // getAge를 통해서만 접근하고
+      // setAge를 통해서만 수정 가능하다
+      // 안전하다
+      const person = function () {
+        // return 만나면서 function은 사라진다.
+        // return 객체에서는 age = 15를 계속 사용한다(참조 관계 유지)
+        let age = 15;
+
+        // return으로 객체 반환
+        return {
+          name: "boo",
+
+          getAge: function () {
+            return age;
+          },
+
+          setAge: function (val) {
+            age = val;
+          },
+        };
+      };
+      const man = person();
+
+      //
+      const info = function (name) {
+        let address = "한국";
+        return {
+          name: name,
+          getAddress() {
+            return address;
+          },
+          setAddress(str) {
+            address = str;
+          },
+        };
+      };
+      const myInfo = info("뿌");
+      myInfo.setAddress("서울");
+
+      console.log(myInfo);
+
+      const outer = function () {
+        let a = 1;
+        const inner = function () {
+          let b = 5;
+          let c = 6;
+          a = a + b + c;
+
+          console.log(a); // 12
+        };
+
+        return inner;
+        // inner(); // inner 함수 실행
+      };
+
+      // newInner에 inner 함수 할당
+      const newInner = outer();
+
+      newInner();
+      // outer(); // outer 함수 실행
+    </script>
+  </body>
+</html>
