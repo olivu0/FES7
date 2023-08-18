@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>색깔 바꾸기</title>
+    <style>
+      .screenColor {
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;
+        background-color: black;
+      }
+      .btn {
+        display: flex;
+        gap: 70px;
+        justify-content: center;
+      }
+      button {
+        display: inline-block;
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="screenColor"></div>
+
+    <ul class="btn">
+      <li class="btnRed"><button>빨강</button></li>
+      <li class="btnYellow"><button>노랑</button></li>
+      <li class="btnGreen"><button>초록</button></li>
+    </ul>
+    <script>
+      const $screenColor = document.querySelector(".screenColor");
+      const $btnRed = document.querySelector(".btnRed");
+      const $btnYellow = document.querySelector(".btnYellow");
+      const $btnGreen = document.querySelector(".btnGreen");
+
+      $btnRed.addEventListener("click", () => {
+        $screenColor.style.backgroundColor = "red";
+      });
+
+      $btnYellow.addEventListener("click", () => {
+        $screenColor.style.backgroundColor = "yellow";
+      });
+
+      $btnGreen.addEventListener("click", () => {
+        $screenColor.style.backgroundColor = "green";
+      });
+    </script>
+  </body>
+</html>

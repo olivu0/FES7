@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 최신 AJAX
+      async function fetchRequest() {
+        const response = await fetch();
+        const jsonData = await response.json();
+      }
+
+      // 옛날 AJAX
+      let jsonObj = {};
+
+      function xhrRequest() {
+        // 통신을 위한 객체를 만듦 (생성자함수를 이용해서)
+        const requestObj = new XMLHttpRequest();
+        // port 열기 === 통신을 하겠다 open(GET: 통신방법, 원하는 API 주소)
+        requestObj.open("GET", "heros.json");
+        // 서버로 통신을 보냄
+        requestObj.send();
+        // 서버에서 응답한 것을 받음
+        // 통신 상태가 바뀜 = onreadystatechange(상태가 계속 변함) , 변화가 감지되면 함수를 실행시킴
+        requestObj.onreadystatechange = () => {
+          // 이 상황이 되면 통신이 완전히 끝난 것, 서버와 통신을 한 목적: 데이터를 주고 받기 위함,
+          // 응답을 client가 다 받은 것
+          if (requestObj.readyState === 4 && requestObj.status === 200) {
+            // 서버로부터의 응답이 responseText에 담겨있음
+            // js 객체로 바꿔줌
+            jsonObj = JSON.parse(requestObj.responseText);
+          }
+        };
+      }
+      xhrRequest();
+    </script>
+  </body>
+</html>
