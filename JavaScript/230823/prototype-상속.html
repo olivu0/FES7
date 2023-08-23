@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        name: "test",
+      };
+
+      console.log(obj.hasOwnProperty("name")); // true
+
+      const arr = [1, 2, 3]; // 인스턴스
+
+      // 인스턴스에는 __proto__ 가 존재한다
+      // 생성자도 결국 함수이다. 함수는 객체이다. 함수도 무엇인가의 인스턴스이다
+      // 배열 arr의 __proto__가 Array(생성자)함수의 __proto__를 참조한다
+      // __proto__ 가 Object 함수의 __proto__를 참조한다
+
+      // 자기 자신에게 존재하지 않는 프로퍼티나 메서드를 프로토타입을 통해 추적하는 과정을 프로토타입 체이닝이라고 함
+
+      console.log(arr.hasOwnProperty("name")); // false
+      // [[prototype]]: 생성자의 prototype과 연결되어 있음
+
+      // arr가 obj의 prototype을 상속받음
+      // arr의 prototype 없음. 상위의 prototype안에 hasOwnProperty 존재
+
+      // 상위의 프로토타입을 찾아 올라감 = 프로토타입 체이닝
+
+      // array의 프로토타입이 object의 프로토타입을 상속받는 것
+
+      // 자바스크립트의 타입들은 기본적으로 Object의 prototype을 상속받음
+      // 최상위 생성자 Object
+      console.log(Array.prototype.__proto__ === Object.prototype); // true
+      console.log(Number.prototype.__proto__ === Object.prototype); // true
+      console.log(String.prototype.__proto__ === Object.prototype); // true
+      console.log(Math.__proto__ === Object.prototype); // true
+
+      // 인스턴스 __proto__
+      // 함수 prototype + __proto__
+      // 생성자도 결국 함수이다. 함수는 객체이다. 함수도 무엇인가의 인스턴스이다
+      // 함수는 function의 인스턴스이다.
+      // 함수도 new Function()에 의해 만들어진다
+
+      "asdf".length; // 4
+      // 이러한 과정 === autoboxing(=== 원시타입도 메서드를 쓸 수 있게 하는 것) (우리눈에 보이지 않음)
+      const myStr = new String("asdf");
+      myStr;
+      myStr.length;
+    </script>
+  </body>
+</html>
