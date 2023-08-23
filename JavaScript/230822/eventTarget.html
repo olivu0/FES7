@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <article class="parent">
+      <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button class="button">버튼2</button></li>
+        <li><button class="button">버튼3</button></li>
+      </ol>
+    </article>
+
+    <script>
+      // 이벤트 target, 이벤트 위임
+      /*
+      const $parent = document.querySelector(".parent");
+      $parent.addEventListener("click", function (event) {
+        console.log(event.target); // event가 발생한 대상
+        // console.log(event.currentTarget); // eventListener가 연결된 요소 참조
+        // 이벤트가 발생한 대상을 조건식으로 특정하기
+        if (event.target.nodeName === "BUTTON") {
+          event.target.textContent = "버튼4";
+        }
+      });
+      */
+
+      // 이벤트의 this
+      const $parent = document.querySelector(".parent");
+      $parent.addEventListener("click", function (e) {
+        // function() {} 함수의 this는 $parent를 가리킴
+        console.log(this);
+        console.log(e.currentTarget); // 위와 동일
+      });
+
+      const myObj = {
+        name: "boo",
+        // 메서드: function 키워드 생략 가능
+        walk() {
+          // this는 상위 스코프 가리킴
+          $parent.addEventListener("click", () => {
+            // this: myObj
+            console.log(this.name + " is walking");
+          });
+        },
+      };
+    </script>
+  </body>
+</html>

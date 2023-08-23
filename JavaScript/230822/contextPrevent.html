@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <p>마우스 우클릭 방지</p>
+    <script>
+      // document에 이벤트를 추가하고 contextmenu 이벤트를 사용한다
+      document.addEventListener("contextmenu", (e) => {
+        // event의 기본동작을 실행하지 못하게 한다
+        e.preventDefault();
+        // 경고 띄우기
+        alert("해당 페이지에서는 오른쪽 클릭을 제한합니다.");
+      });
+    </script>
+  </body>
+</html>

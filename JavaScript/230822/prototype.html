@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function RobotFactory(foodNames) {
+        this.menu = foodNames;
+      }
+
+      // 생성자 함수 밖에 prototype 선언
+      RobotFactory.prototype.sayMenu = function () {
+        const index = parseInt(Math.random() * this.menu.length);
+        console.log(`삐리릭 삐릭 오늘의 메뉴는 ${this.menu[index]}`);
+      };
+
+      const robot1 = new RobotFactory(["청국장", "물냉면", "돔배고기"]);
+      const robot2 = new RobotFactory(["된장찌개", "물냉면", "돔배고기"]);
+
+      robot2.sayMenu === robot1.sayMenu; // true;
+    </script>
+  </body>
+</html>

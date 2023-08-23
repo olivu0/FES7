@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const arr = new Array(1, 2, 3); // [1, 2, 3];
+      const arr2 = new Array(1, 2, 3);
+
+      function Factory() {}
+
+      const robot1 = Factory(); // Factory의 반환값 undefined
+      // 생성자 함수
+      const robot2 = new Factory(); // Factory {}
+      robot2 instanceof Factory; // true
+      typeof robot2; // object
+
+      // 생성자함수의 this는 생성자를 통해 만들어진 instance를 참조한다(가리킨다)
+      function NewFactory(name) {
+        this.name = name;
+        this.sayYourName = function () {
+          console.log("삐리릭 삐리릭 제 이름은 " + this.name + "입니다~");
+        };
+      }
+
+      const robot1_1 = new NewFactory("부영");
+      // 생성자 함수의 this는 robot1_1을 참조한다.
+      robot1_1.name;
+      console.log(robot1_1.name); // '부영'
+      robot1_1.sayYourName();
+
+      // 어떤 함수든 new 키워드와 같이 쓰면 객체를 생성하는 생성자 함수가 된다
+    </script>
+  </body>
+</html>

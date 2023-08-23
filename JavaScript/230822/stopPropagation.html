@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <form action="">
+      <button type="submit" class="submit">클릭!</button>
+    </form>
+
+    <script>
+      const $button = document.querySelector("button");
+      // button에 eventListener
+      $button.addEventListener("click", (event) => {
+        // event의 동작은 막지만 event의 흐름을 막지는 않는다
+        event.preventDefault();
+        console.log("click!!");
+        // event의 전파(흐름)을 막음, 밑의 'event still alive!' 출력되지 않음
+        // 버블링 전파만 막음 (캡쳐링 이벤트는 막지 못함)
+        event.stopPropagation();
+      });
+
+      // body에 eventListener
+      // 캡쳐링 이벤트로 만들면 버블링 이벤트에서 전파를 막아도 소용이 없다
+      document.body.addEventListener(
+        "click",
+        () => {
+          console.log("event still alive!");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>

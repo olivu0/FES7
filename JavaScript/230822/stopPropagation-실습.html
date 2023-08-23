@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>나의 todo list</h1>
+    <p>1. 오늘 저녁에는 부대찌게를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>2. 후식으로 슈팅스타를 먹겠다.<button type="button">삭제</button></p>
+    <p>3. 자기 전에 반드시 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+    <script>
+      // 1. p태그를 클릭하면 p태그의 컨텐츠를 출력하는 alert 창을 띄워준다
+      // querySelectAll에는 바로 addEventListener 안붙음, 반복문 forEach로 각각 이벤트를 적용시켜주면 된다
+      const $p = document.querySelectorAll("p");
+      $p.forEach((item) => {
+        item.addEventListener("click", () => {
+          // 이렇게 해도 삭제 사라짐
+          // console.log(item.firstChild.textContent);
+          alert(item.textContent.slice(0, -2));
+        });
+      });
+
+      // 2. 삭제 버튼을 클릭하면 삭제할 것인지를 물어보는 confirm 창을 띄워주고, 확인을 누르면 p태그를 삭제한다
+      const $button = document.querySelectorAll("button");
+      $button.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          let del = confirm("삭제할거야?");
+          // button의 event가 일어나고 버블링이 실행되면서 상위태그인 p 태그에도 이벤트가 전파되어
+          // p태그도 이벤트가 일어남.
+          e.stopPropagation();
+
+          if (del) {
+            // 태그 삭제하는 방법
+            item.parentElement.remove();
+            // 상위로 올라가 가장 가까운 p태그 선택(closest('p'))해서 remove()
+            // item.closest("p").remove();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
