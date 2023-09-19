@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./index.js" />
+  </head>
+  <body>
+    <h1 class="title">
+      <img src="./images/Group.png" alt="weniv 로고" />
+    </h1>
+    <section class="timer">
+      <h2 class="tit-timer">TIMER</h2>
+      <div class="hr"></div>
+
+      <div class="time">
+        <div class="hrs">
+          <h3 class="txt-timer">HRS</h3>
+          <input id="hour" class="timer-box" placeholder="00" />
+        </div>
+        <img src="./images/dot.png" alt=":" />
+        <div class="min">
+          <h3 class="txt-timer">MIN</h3>
+          <input id="minute" class="timer-box" placeholder="00" />
+        </div>
+        <img src="./images/dot.png" alt=":" />
+        <div class="sec">
+          <h3 class="txt-timer">SEC</h3>
+          <input placeholder="00" id="second" class="timer-box" />
+        </div>
+      </div>
+
+      <div class="btn">
+        <button class="btn-start">
+          <img src="./images/icon-start-disabled.png" alt="시작 버튼" />
+          START
+        </button>
+        <button class="btn-reset"><img src="./images/icon-reset-disabled.png" alt="리셋 버튼" /> RESET</button>
+      </div>
+    </section>
+    <footer>ⓒ WENIV Corp.</footer>
+  </body>
+</html>
