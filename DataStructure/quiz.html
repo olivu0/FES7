@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz</title>
+  </head>
+  <body>
+    <script>
+      // quiz1
+      let msg = "hello";
+      let info = "lions";
+
+      // msg, info의 값을 switch 해보자(새로운 변수 생성)
+      let temp = msg;
+      msg = info;
+      info = temp;
+
+      // quiz2
+      let a = 100;
+      let b = 200;
+
+      // a와 b의 값을 switch 해보자
+      // 방법1: 구조분해할당을 이용한다
+      // [a, b] = [b, a];
+
+      // 방법2: 숫자여서 가능한 방법
+      a = a + b; // a = 300
+      b = a - b; // b = 100
+
+      a = a - b; // a = 200
+    </script>
+  </body>
+</html>

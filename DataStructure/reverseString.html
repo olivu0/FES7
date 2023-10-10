@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reverseString</title>
+  </head>
+  <body>
+    <script>
+      // 문자열을 뒤집어보는 함수 만들기
+
+      // 첫번째 방법 (메서드 이용)
+      function reverse(str) {
+        let splitStr = str.split(""); // 문자열 -> 배열
+        // 문자열을 배열로 만들때 spread syntax사용할 수도 있다 [...str]
+        // Array.from(str) 도 가능
+        let reverseArr = splitStr.reverse(); // 배열 뒤집기
+        let joinArr = reverseArr.join(""); // 배열 -> 문자열
+        return joinArr;
+      }
+
+      // 위의 방법을 한 줄로 나타냄
+      function reverseOneSentence(str) {
+        return str.split("").reverse().join("");
+      }
+
+      // 위의 방법을 또 줄임
+      const reverse3 = (str) => [...str].reverse().join("");
+
+      // 두번째 방법 (for문 이용)
+      function reverseFor(str) {
+        let newStr = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          newStr += str[i];
+        }
+        return newStr;
+      }
+
+      // 세번째 방법 (재귀 이용)
+      // substring(): 기존 문자열의 특정 시작 인덱스부터 끝 인덱스의 범위 내에 위치한 문자를 부분 문자열로 반환함
+      // charAt(): 문자열의 특정 인덱스에 위치하는 문자를 반환
+      // 실행속도가 매우 느리기 때문에 문자열이 매우 길고 스택의 크기가 중요한 경우에는 가장 효율적인 문자열 반전 방법이 아님
+      function reverseRecursive(str) {
+        if (str === "") {
+          return "";
+        } else {
+          return reverseRecursive(str.substring(1)) + str.charAt(0);
+        }
+
+        // 삼항연산자 사용해 한번에 작성
+        return str === "" ? "" : reverseRecursive(str.substr(1)) + str.charAt(0);
+      }
+
+      //////////////////////////////////////////////
+      // 강사님 풀이
+
+      function reverseT(str) {
+        // 아무 값이 안들어왔거나 string이 아닌 경우 + 문자열이 한개인 경우 (예외처리)
+        if (!str || typeof str !== "string" || str.length < 2) return "문자열을 전달해주세요!";
+
+        // 문자열 뒤집기
+        // 'hello'
+        // backwords = ['o', 'l', 'l', 'e', 'h'];
+        const backwords = [];
+        const lastIndex = str.length - 1;
+
+        for (let i = lastIndex; i >= 0; i--) {
+          backwords.push(str[i]);
+        }
+        return backwords.join("");
+      }
+    </script>
+  </body>
+</html>
